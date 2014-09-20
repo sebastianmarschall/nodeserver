@@ -1,0 +1,25 @@
+doctype html
+html
+	include ./head.jade
+	body
+		div.container
+			include nav.jade
+			table.table
+				thead
+					tr
+						th id
+						th url
+						th created
+						th
+				tbody
+					each result in data
+						tr
+							td= result.id
+							td= result.url
+							td= result.created
+							td(align='right')
+								a.btn.btn-danger.btn-sm(role='button', href='/links/delete/' + result.id)
+									span.glyphicon.glyphicon-minus
+								|  
+								a.btn.btn-warning.btn-sm(role='button', href='/links/edit/' + result.id)
+									span.glyphicon.glyphicon-pencil

@@ -1,0 +1,26 @@
+doctype html
+html
+	include head.jade
+	body
+		div.container
+			include nav.jade
+			div.row
+				div.col-md-2
+				div.col-md-6
+					-if(messages)
+						div.alert.alert-danger(role='alert')
+							b Oh Snap!
+							|  #{messages}
+					form.form-horizontal(role='form',method='post',action='/links/add')
+						div.form-group
+							label.col-sm-2.control-label(for='url') URL
+							div.col-sm-10
+								input.form-control#url(placeholder='Enter URL',name='url',type='text')
+						div.form-group
+							label.col-sm-2.control-label(for='pw') Password
+							div.col-sm-10
+								input.form-control#pw(placeholder='Password',name='password',type='text')
+						div.form-group
+							div.col-sm-offset-2.col-sm-2
+								button.btn.btn-primary.btn(type='submit',name='submit')
+									span.glyphicon.glyphicon-plus Add

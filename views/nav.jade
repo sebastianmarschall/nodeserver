@@ -1,0 +1,15 @@
+nav.navbar.navbar-inverse(role='navigation')
+	ul.nav.navbar-nav
+		if(page_title=='links')
+			li.active
+				a(href='/links') Links
+		else
+			li
+				a(href='/links') Links
+
+		if(page_title=='add link')
+			li.active
+				a(href='/links/add') Add URL
+		else
+			li
+				a(href='/links/add') Add URL
